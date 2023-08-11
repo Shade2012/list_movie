@@ -17,6 +17,8 @@ void initState() {
     Movie spiritedaway = new Movie("Spirited Away",'asset/spirited_away.jpg', "2001", "8.6" );
     Movie pussinboots = new Movie("Puss in Boots: The Last Wish",'asset/puss.jpg', "2022", "9.1" );
     Movie unberabletalent = new Movie("The Unbearable Weight of Massive Talent", 'asset/theunbearable.jpg', "2022", "7.6");
+    Movie riseofguardian = new Movie("Rise of the Guardians", 'asset/rise_of_guardian.jpg', "2012", "7.2");
+    datamovie.add(riseofguardian);
     datamovie.add(unberabletalent);
     datamovie.add(spiritedaway);
     datamovie.add(pussinboots);
@@ -58,8 +60,12 @@ appBar: AppBar(title: Text("List Film Favorit"),
 
                     ),
                     Image.asset(datamovie[index].poster),
-                    Text(datamovie[index].rate),
-                    Text(datamovie[index].tahunrilis),
+
+                    Text(datamovie[index].rate,
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+
+                    Text(datamovie[index].tahunrilis,
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                   ],
                 ),
 
