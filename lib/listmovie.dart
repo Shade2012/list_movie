@@ -8,8 +8,9 @@ class listmovie extends StatefulWidget {
 }
 
 class _listmovieState extends State<listmovie> {
-
   List<Movie> datamovie = [];
+
+
   @override
 void initState() {
     // TODO: implement initState
@@ -61,10 +62,10 @@ appBar: AppBar(title: Text("List Film Favorit"),
                     ),
                     Image.asset(datamovie[index].poster),
 
-                    Text(datamovie[index].rate,
+                    Text("Rating :" + datamovie[index].rate,
                         style: TextStyle(fontWeight: FontWeight.bold)),
 
-                    Text(datamovie[index].tahunrilis,
+                    Text("Tahun Rilis " + datamovie[index].tahunrilis,
                         style: TextStyle(fontWeight: FontWeight.bold)),
                   ],
                 ),
@@ -77,7 +78,7 @@ appBar: AppBar(title: Text("List Film Favorit"),
     );
 
 
-    return const Placeholder();
+
   }
 
 }
