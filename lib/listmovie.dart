@@ -32,72 +32,75 @@ void initState() {
 appBar: AppBar(title: Text("List Film Favorit"),
   centerTitle: true,
       ),
-      body: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        padding:  EdgeInsets.all(8),
-        itemCount: datamovie.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            height: 200,
-            margin: EdgeInsets.all(20),
-            padding: EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                color: Colors.black.withOpacity(0.2),
-                spreadRadius: 0,
-                blurRadius: 1.5,
-                offset: Offset(0, 0),
-              )],
-              borderRadius: BorderRadius.circular(5),
-              color: Colors.white,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      body: Container(
+        height: 600,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          padding:  EdgeInsets.all(8),
+          itemCount: datamovie.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
 
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(datamovie[index].nama,
-                      style: TextStyle(fontWeight: FontWeight.bold)
+              margin: EdgeInsets.all(20),
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  spreadRadius: 0,
+                  blurRadius: 1.5,
+                  offset: Offset(0, 0),
+                )],
+                borderRadius: BorderRadius.circular(5),
+                color: Colors.white,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
 
-                    ),
-                    Image.asset(datamovie[index].poster),
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(datamovie[index].nama,
+                        style: TextStyle(fontWeight: FontWeight.bold)
 
-                    Text("Rating :" + datamovie[index].rate,
-                        style: TextStyle(fontWeight: FontWeight.bold)),
+                      ),
+                      Image.asset(datamovie[index].poster),
 
-                    Text("Tahun Rilis " + datamovie[index].tahunrilis,
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                    Column(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 0,top: 15, right: 0,bottom: 5),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => DetailMovie(movie:datamovie[index]),
-                              ),
-                            );
-                          },style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Colors.white),
-                          foregroundColor: MaterialStateProperty.all(Colors.grey),
-                        ),
-                          child: Text('Detail',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
-                        ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                      Text("Rating :" + datamovie[index].rate,
+                          style: TextStyle(fontWeight: FontWeight.bold)),
 
-              ],
-            ),
-          );
-        },
+                      Text("Tahun Rilis " + datamovie[index].tahunrilis,
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      Column(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 0,top: 15, right: 0,bottom: 5),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DetailMovie(movie:datamovie[index]),
+                                ),
+                              );
+                            },style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(Colors.white),
+                            foregroundColor: MaterialStateProperty.all(Colors.grey),
+                          ),
+                            child: Text('Detail',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
+                          ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+
+                ],
+              ),
+            );
+          },
+        ),
       ),
     );
 
